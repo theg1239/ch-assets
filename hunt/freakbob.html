@@ -35,11 +35,26 @@
             max-height: 500px;
             margin-top: 20px;
         }
+        .play-button {
+            background-color: #ffffff;
+            color: black;
+            padding: 5px 10px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            margin-left: 10px;
+            border-radius: 5px;
+        }
+        .play-button:hover {
+            background-color: #dddddd;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="title">Are you gonna accept the call?</div>
+        <div class="title">Are you gonna accept the call?
+            <button class="play-button" id="play-button">Play Audio</button>
+        </div>
         <div class="location">
             <img id="image" src="/assets/freakbob.png" alt="Freakbob Image">
         </div>
@@ -50,14 +65,14 @@
     </audio>
 
     <script>
-        document.getElementById('image').addEventListener('load', function() {
+        document.getElementById('play-button').addEventListener('click', function() {
             var audio = document.getElementById('background-audio');
             var playPromise = audio.play();
             if (playPromise !== undefined) {
                 playPromise.then(function() {
-                    console.log('Audio is playing automatically after image loaded');
+                    console.log('Audio is playing');
                 }).catch(function(error) {
-                    console.log('Autoplay prevented. User interaction required to play the audio.');
+                    console.log('Playback failed', error);
                 });
             }
         });
