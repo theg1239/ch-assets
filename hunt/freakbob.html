@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Congratulations you found the password to part 2: URL-->
 <!--https://stylesuxx.github.io/steganography/ -->
 <html lang="en">
 <head>
@@ -7,7 +8,9 @@
     <title>bob #3</title>
     <style>
         body {
-            background-color: black;
+            background-image: url('/assets/freakbob.png');
+            background-size: cover;
+            background-position: center;
             color: white;
             font-family: monospace;
             display: flex;
@@ -19,44 +22,32 @@
             position: relative;
         }
         .container {
-            width: 80%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
         }
         .title {
             font-size: 2em;
             margin-bottom: 20px;
         }
-        .location {
-            font-size: 1em;
-            white-space: pre-wrap;
-        }
-        .location img {
-            width: 30%;
-            height: auto;
-            max-height: 500px;
-            margin-top: 20px;
-        }
         .play-button {
-            background-color: #ffffff;
-            color: black;
-            padding: 5px 10px;
+            width: 15px;
+            height: 15px;
+            background-color: white;
             border: none;
-            font-size: 1em;
             cursor: pointer;
             margin-left: 10px;
-            border-radius: 5px;
+            vertical-align: middle;
         }
         .play-button:hover {
-            background-color: #dddddd;
+            background-color: lightgray;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="title">Are you gonna accept the call?
-            <button class="play-button" id="play-button">Play Audio</button>
-        </div>
-        <div class="location">
-            <img id="image" src="/assets/freakbob.png" alt="Freakbob Image">
+            <button class="play-button" id="play-button"></button>
         </div>
     </div>
 
