@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<!--Congratulations you found the password to part 2: URL-->
+<!--https://stylesuxx.github.io/steganography/ -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bob #3</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            text-align: center;
+            position: relative;
+        }
+        .container {
+            width: 80%;
+        }
+        .title {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .location {
+            font-size: 1em;
+            white-space: pre-wrap;
+        }
+        .location img {
+            width: 30%;
+            height: auto;
+            max-height: 500px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">Are you gonna accept the call?</div>
+        <div class="location">
+            <img src="/assets/freakbob.png" alt="Freakbob Image">
+        </div>
+    </div>
+
+    <audio id="background-audio" src="/assets/pickup.mp3" autoplay loop>
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('background-audio');
+            var playPromise = audio.play();
+            if (playPromise !== undefined) {
+                playPromise.then(function() {
+                    console.log('Audio is playing automatically');
+                }).catch(function(error) {
+                    console.log('Autoplay prevented. User interaction required to play the audio.');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
